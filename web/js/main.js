@@ -10,10 +10,12 @@ window.addEventListener("message", (event) => {
   switch (event.data.event) {
     case "visible": {
       body.style.visibility = event.data.state ? "visible" : "hidden";
+      eye.style.fill = 'hsla(0, 0%, 100%, 0.85)'
       return eye.classList.remove("eye-hover");
     }
 
     case "leftTarget": {
+      eye.style.fill = 'hsla(0, 0%, 100%, 0.85)'
       return eye.classList.remove("eye-hover");
     }
 
