@@ -159,7 +159,12 @@ function utils.hasPlayerGotItems(filter, hasAny)
             end
         elseif tabletype == 'array' then
             for i = 1, #filter do
-                local hasItem = (playerItems[filter[i]] or 0) > 0
+                local hasItem = (playerItems[filter[i]] or 0)
+                if type(hasItem) == 'table' then
+                    hasItem = (hasItem[filter[i]] or 0) > 0
+                else
+                    hasItem = hasItem > 0
+                end
 
                 if hasAny then
                     if hasItem then return true end

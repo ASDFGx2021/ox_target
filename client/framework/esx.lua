@@ -47,10 +47,12 @@ RegisterNetEvent('esx:setJob2', function(job)
 end)
 
 RegisterNetEvent('esx:addInventoryItem', function(name, count)
+    local _, count = next(count)
     playerItems[name] = count
 end)
 
 RegisterNetEvent('esx:removeInventoryItem', function(name, count)
+    local _, count = next(count)
     playerItems[name] = count
 end)
 
